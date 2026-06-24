@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { num } from "@/lib/format";
 import type { Club, DriveCourse } from "@/lib/types";
@@ -17,13 +18,13 @@ export default async function CommunityPage() {
         <h2 className="text-[17px] font-bold mb-2">자동차 소모임</h2>
         <div className="space-y-2">
           {(clubs as Club[] | null)?.map((c) => (
-            <div key={c.id} className="bg-card border border-line rounded-2xl p-4">
+            <Link key={c.id} href={`/community/${c.id}`} className="block bg-card border border-line rounded-2xl p-4">
               <div className="flex items-center justify-between">
                 <p className="font-bold text-[15px]">{c.name}</p>
                 <span className="text-xs text-ink-muted">멤버 {num(c.member_count)}명</span>
               </div>
               {c.description && <p className="text-ink-muted text-sm mt-1">{c.description}</p>}
-            </div>
+            </Link>
           ))}
         </div>
       </section>
