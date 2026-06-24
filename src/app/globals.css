@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f7f8fa;
+  --color-card: #ffffff;
+  --color-line: #e5e8eb;
+  --color-ink: #191f28;
+  --color-ink-sub: #4e5968;
+  --color-ink-muted: #8b95a1;
+  --color-blue: #3182f6;
+  --color-blue-dark: #1b64da;
+  --color-blue-soft: #ebf2fe;
+  --color-up: #f04452;
+  --color-down: #3182f6;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #d9dde3;
+  color: var(--color-ink);
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Malgun Gothic", system-ui, Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 모바일 퍼스트 앱 셸 (데스크탑에서도 폰 폭 유지) */
+.app-shell {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--color-bg);
+  min-height: 100dvh;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
