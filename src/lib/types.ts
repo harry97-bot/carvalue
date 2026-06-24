@@ -70,6 +70,38 @@ export interface PartnerLink {
   url: string;
 }
 
+export interface ShopItem {
+  id: string;
+  name: string;
+  description: string | null;
+  item_type: "profile_frame" | "profile_background" | "car_card_skin" | "nickname_effect" | "emote";
+  image_url: string | null;
+  price_points: number;
+  rarity: string;
+  is_limited: boolean;
+}
+
+export interface DriveCourseDetail extends DriveCourse {
+  description: string | null;
+  recommended_car_type: string | null;
+  image_url: string | null;
+  map_url: string | null;
+}
+
+export const ITEM_TYPE_LABEL: Record<ShopItem["item_type"], string> = {
+  profile_frame: "프로필 프레임",
+  profile_background: "프로필 배경",
+  car_card_skin: "차량 카드",
+  nickname_effect: "닉네임 효과",
+  emote: "이모티콘",
+};
+
+export const RARITY_COLOR: Record<string, string> = {
+  normal: "#8b95a1",
+  rare: "#3182f6",
+  epic: "#8b5cf6",
+};
+
 export const VOTE_CATEGORY_LABEL: Record<Vote["category"], string> = {
   brand: "제조사",
   model: "모델",

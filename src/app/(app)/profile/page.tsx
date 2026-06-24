@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { num } from "@/lib/format";
 import type { Profile, UserCar } from "@/lib/types";
 import LogoutButton from "@/components/LogoutButton";
+import CheckInButton from "@/components/CheckInButton";
 
 export default async function ProfilePage() {
   const supabase = await createClient();
@@ -67,6 +68,14 @@ export default async function ProfilePage() {
             <p className="font-bold">{mainCar.brand} {mainCar.model} <span className="text-ink-muted font-normal">({mainCar.year})</span></p>
           </div>
         )}
+      </div>
+
+      {/* 출석 + 상점 */}
+      <div className="flex gap-2 mt-3">
+        <CheckInButton />
+        <Link href="/shop" className="flex-1 bg-bg text-ink-sub font-bold rounded-xl py-3.5 text-center">
+          상점 가기
+        </Link>
       </div>
 
       {/* 포인트 내역 */}
