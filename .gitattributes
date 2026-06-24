@@ -1,0 +1,2 @@
+# SQL 마이그레이션은 LF 고정 (DB 원본과 바이트 일치 보존)
+*.sql text eol=lf
